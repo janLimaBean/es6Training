@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script src="bundel.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+<!-- NOTE EXTRA SCRIPT REQ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+	<script type="text/babel">
+//GENERATORS ARE GENERALLY USED IN ASYNC FUNCTIONS TO CHECK FOR DONE PROPERTY AS TRUE BEFORE DOING SOMETHING
+
+
+/* OLD METHOD TO COUNTDOWN ON FUNC
+//The .next() method returns an object with two properties done and value. You can also provide a parameter to the next method to send a value to the generator.
+
+//note the * requirement
+		function* gen() { 
+
+//note the yield - can be any value. the function will need to run 3 times
+//before the done property will be marked as true
+		  yield 1;
+		  yield 2;
+		  yield 3;
+		}
+// Each time we use a yield statement we need to restart the function thus
+// we are creating a countdown before the property done = true
+		var g = gen(); 				// "Generator { }"
+		console.log(g.next());      // "Object { value: 1, done: false }"
+		console.log(g.next());      // "Object { value: 2, done: false }"
+		console.log(g.next());      // "Object { value: 3, done: false }"
+		console.log(g.next());      // "Object { value: undefined, done: true }"			
+*/
+
+/* NEW METHOD */
+//NOW THAT WE KNOW HOW THE GENERATOR WORKS SEE EXAMPLE BELOW
+
+//defining yield statements with the * and yield - note the arr argument
+//Thus we will loop through a number of times to generate a number of 
+// yield statements with values assigned to them
+	function* eachItem(arr) {
+		for(var i=0; i < arr.length; i++){
+			yield arr[i];
+		}
+	}
+//Setting up array
+	var letters = eachItem(["a","b","c","d","e","f","g"]);
+
+	var abcs = setInterval(function(){
+//1. setting letters current yield value to letter
+//2. going to next yield value
+		var letter = letters.next();
+//3. condition to check if letter done property is set to true
+		if(letter.done){
+			clearInterval(abcs);
+			console.log("Now I know my abcs")
+//4. if done property is not set to true then print out yield value
+		} else {
+			console.log(letter.value)
+		}
+//5. wait 500ms
+	},500);
+	</script>
+	<title>Working with Babel</title>
+</head>
+<body>
+	<header>
+		<h1>Open console</h1>
+		<section></section>
+	</header>
+
+</body>	
+</html>

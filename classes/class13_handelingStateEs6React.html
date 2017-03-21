@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script src="bundel.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+<!-- note new script for react -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>
+	<script type="text/babel">
+
+		class Restaurant extends React.Component {
+		constructor(){
+		//not making any changes to the parent properties with super
+			super();
+			this.state = {
+				status:"Not Open"
+			};
+	//making sure this does not fall out of scope so as to bind this to the parent at super();
+			this.openRestaurant = this.openRestaurant.bind(this);
+			this.closeRestaurant = this.closeRestaurant.bind(this);
+		}
+		//setting state for restaurant with function
+			openRestaurant(){
+				this.setState({
+					status:"open"
+				});
+			}
+		//setting state for restaurant with function
+			closeRestaurant(){
+				this.setState({
+					status:"closed"
+				});
+			}			
+			render(){
+				return (<div>
+						<h1>{this.props.name}</h1>
+						<p>The restaurant is {this.state.status}</p>
+						<button onClick={this.openRestaurant}>Open Restaurant</button>
+						<button onClick={this.closeRestaurant}>Close Restaurant</button>
+						</div>)
+			}
+		}
+		//call component restaurant
+		React.render(<Restaurant name="Steakout Grill"></Restaurant>,document.body)
+
+	</script>
+	<title>Working with Babel</title>
+</head>
+<body>
+	<header>
+		<h1>Open console</h1>
+		<section></section>
+	</header>
+
+</body>	
+</html>

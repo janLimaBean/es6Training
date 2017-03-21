@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		section > div {
+			height: 100px;
+			width: 100px;
+			background:red;
+			float: left;
+			margin:3px;
+			cursor: pointer;
+		}
+	</style>
+	<!-- <script src="bundel.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+	/*
+	//print name
+		function print(firstName){
+			//console.log("hello" + firstName);
+			//es6 version - note the backticks (no spaces and no + sign)
+			console.log(`hello ${firstName}`)
+		}
+
+		print('JJ');
+	*/
+	
+	//create mail
+		function createEmail(firstName, purchasePrince){
+			var shipping = 5.95;
+	//now using template string with vars. Things to note:
+		// - logic on the + operator that is not used as concatenation
+		// - again vars being pulled in by the ${}
+			console.log(
+				`
+				Hi ${firstName}, Thanks for buying from us!
+				Total: R${purchasePrince}
+				Shipping: R${shipping}
+				Grand Total: R${purchasePrince + shipping}
+				`
+			);
+		}
+
+		createEmail("JJ",50);
+
+	</script>
+	<title>Working with Babel</title>
+</head>
+<body>
+	<header>
+		<h1>Open console</h1>
+		<section></section>
+	</header>
+
+</body>	
+</html>

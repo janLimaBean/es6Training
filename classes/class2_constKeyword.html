@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		section > div {
+			height: 100px;
+			width: 100px;
+			background:red;
+			float: left;
+			margin:3px;
+			cursor: pointer;
+		}
+	</style>
+	<!-- <script src="bundel.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+		function coldEnough(deg){
+/* const declaration protect the freezingTemp var - note create another var with name freezingTemp to see result */
+			const freezingTemp = 0;
+			if(freezingTemp <= deg){
+				return deg + " is above freezing";
+			} else {
+				return deg + " is below freezing";
+			}
+		}
+
+		console.log(coldEnough(1));
+		console.log(coldEnough(-1));
+		console.log(coldEnough(5));
+	</script>
+	<title>Working with Babel</title>
+</head>
+<body>
+	<header>
+		<h1>Open console</h1>
+		<section></section>
+	</header>
+
+</body>	
+</html>

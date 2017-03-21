@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script src="bundel.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+<!-- note new script for react -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>
+	<script type="text/babel">
+/* OLD REACT WAY */
+/*
+//Way to create a new component - this will replace the document.body with the component. Note "Open console" does not display
+	//1. declaring the var and using react to create the class
+		var Restaurant = React.createClass({
+	//2. render will return/render an output that you can bind to a func
+			render: function(){
+	//3. return the following to the render
+	//4. inside the render using an attribute property as the value between the H1
+				return (<div>
+						<h1>{this.props.name}</h1>
+						</div>)
+			}
+		});	
+	//5. calling the render for the Restaurant with a name property
+		React.render(<Restaurant name="Steakout Grill"></Restaurant>,document.body)
+*/
+
+/* NEW ES6 METHOD */
+	//extending reacts component class so we can use es6 syntax i.e no more : function
+		class Restaurant extends React.Component {
+	//removing function keywords
+			render(){
+				return (<div>
+						<h1>{this.props.name}</h1>
+						</div>)
+			}
+		}
+		React.render(<Restaurant name="Steakout Grill"></Restaurant>,document.body)
+
+	</script>
+	<title>Working with Babel</title>
+</head>
+<body>
+	<header>
+		<h1>Open console</h1>
+		<section></section>
+	</header>
+
+</body>	
+</html>

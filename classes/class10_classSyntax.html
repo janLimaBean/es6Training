@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script src="bundel.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+<!-- NOTE EXTRA SCRIPT REQ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+	<script type="text/babel">
+//defining class
+		class Vehicle {
+//initializer to create the object
+			constructor(description,wheels){
+//properties
+				this.description = description;
+				this.wheels = wheels;
+			}
+//function + string templates
+			describeYourself(){
+				console.log(`I am a ${this.description} with ${this.wheels} wheels`);
+			}
+		}
+//creating new instance
+		var coolSkiVan = new Vehicle("cool ski van",4);
+//running class function
+		coolSkiVan.describeYourself();
+	</script>
+	<title>Working with Babel</title>
+</head>
+<body>
+	<header>
+		<h1>Open console</h1>
+		<section></section>
+	</header>
+
+</body>	
+</html>

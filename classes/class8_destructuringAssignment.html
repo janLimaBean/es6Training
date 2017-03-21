@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script src="bundel.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+/* OLD METHOD FOR EXTRATING DATA FROM ARRAY */
+/*
+		var cities = ["Spkane","Boston","LA","Seattle","Portland"];
+		console.log(cities[0]);
+		console.log(cities[3]);
+*/
+
+/* NEW METHOD WITH ARRAYS */
+// Note commas that correspond to key values and vars that correspond to
+// that key value
+// Also note the last comma to account for last key
+		var [first,,,fourth,] = ["Spkane","Boston","LA","Seattle","Portland"];
+		console.log(first);
+		console.log(fourth);
+
+	console.log("***************");
+
+/* NEW METHOD WITH OBJECTS IE1 */
+	//old line
+	//var sandwich = {
+//note the 2 new vars that correspond to the object property
+	var {title, price} = {
+		title:"Reuben",
+		price:7,
+		description:"Best ever",
+		ingredients:["bread","ham","cheese","dressing"]
+	}
+	console.log(title);
+	console.log(price);
+	
+	console.log("***************");
+
+/* NEW METHOD WITH OBJECTS IE2 */
+	var vacation =  {
+		destination: "Chile",
+		travelers:2,
+		activity:"skiing",
+		cost:4000
+	}
+//Note we are using the destructuring assignment + template string here
+	function vacationMarketing(destination,activity){
+		return `Come to ${destination} and do some ${activity}`
+	}
+// By only passing in the vacation object(argument) in the func below the
+// destructuring vars in the function vactionMarketing will parse through
+// the vacation object to get the values.
+	console.log(vacationMarketing(vacation));
+
+
+
+
+
+
+	</script>
+	<title>Working with Babel</title>
+</head>
+<body>
+	<header>
+		<h1>Open console</h1>
+		<section></section>
+	</header>
+
+</body>	
+</html>

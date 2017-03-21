@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		section > div {
+			height: 100px;
+			width: 100px;
+			background:red;
+			float: left;
+			margin:3px;
+			cursor: pointer;
+		}
+	</style>
+	<!-- <script src="bundel.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+		var cats = ["Tabby","Siamese","Persian"];
+		var dogs = ["Golden","Pug","Schnauzer"];
+
+//note the ... spread operator to implode the array values into the animal
+// array. Without this ... we would note in the console array(3) instead
+// of the array values
+
+		var animals = 
+		["Whale","Giraffe",...cats,"Snake",...dogs,"Coyote"];
+		//["Whale","Giraffe",cats,"Snake",dogs,"Coyote"];
+
+		console.log(animals);
+
+	</script>
+	<title>Working with Babel</title>
+</head>
+<body>
+	<header>
+		<h1>Open console</h1>
+		<section></section>
+	</header>
+
+</body>	
+</html>
